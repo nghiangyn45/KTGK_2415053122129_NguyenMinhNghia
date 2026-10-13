@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/edtEditTen_129"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Tên khoản chi mới"/>
+
+    <EditText
+        android:id="@+id/edtEditSoTien_129"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Số tiền mới"
+        android:inputType="numberDecimal"
+        android:layout_marginTop="12dp"/>
+
+    <EditText
+        android:id="@+id/edtEditGhiChu_129"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Ghi chú mới"
+        android:layout_marginTop="12dp"/>
+
+    <Button
+        android:id="@+id/btnLuuChinhSua_129"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Lưu thay đổi"
+        android:layout_marginTop="24dp"/>
+
+    <Button
+        android:id="@+id/btnHuyBo_129"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Hủy"
+        android:layout_marginTop="12dp"/>
+
+</LinearLayout>
