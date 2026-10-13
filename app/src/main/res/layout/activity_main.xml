@@ -37,6 +37,7 @@
         android:inputType="text"
         android:layout_marginTop="12dp"/>
 
+    <!-- Nút 1: Thêm khoản chi -->
     <Button
         android:id="@+id/btnThemKhoanChi_129"
         android:layout_width="match_parent"
@@ -44,11 +45,26 @@
         android:text="Thêm khoản chi"
         android:layout_marginTop="24dp"/>
 
+    <!-- Nút 2: Chi tiết khoản chi -->
     <Button
         android:id="@+id/btnXemChiTiet_129"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Xem chi tiết khoản chi"
+        android:text="Chi tiết khoản chi"
         android:layout_marginTop="12dp"/>
 
+    <!-- Nút 3: Sửa khoản chi -->
+    <Button
+        android:id="@+id/btnChinhSuaMain_129"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sửa khoản chi"
+        android:layout_marginTop="12dp"/>
+    <EditText
+        android:id="@+id/edtLoaiChi_129"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nhập loại chi (VD: Ăn uống, Học tập)"
+        android:inputType="text"
+        android:layout_marginTop="12dp"/>
 </LinearLayout>

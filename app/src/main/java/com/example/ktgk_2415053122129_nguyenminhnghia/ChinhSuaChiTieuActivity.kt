@@ -43,21 +43,11 @@ class ChinhSuaChiTieuActivity : AppCompatActivity() {
             }
 
             val soTienMoi_129 = soTienStr_129.toDoubleOrNull() ?: 0.0
-
-            // Khởi tạo đối tượng KhoanChi và gọi hàm laSoTienHopLe_129() để kiểm tra
-            val khoanChi_129 = KhoanChi(
-                tenKhoanChi = tenMoi_129,
-                soTien = soTienMoi_129,
-                ghiChu = ghiChuMoi_129,
-                daThanhToan = true
-            )
-
-            if (!khoanChi_129.laSoTienHopLe_129()) {
+            if (soTienMoi_129 <= 0) {
                 Toast.makeText(this, "Số tiền phải lớn hơn 0!", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
-            // Trả dữ liệu về qua Intent nếu hợp lệ
             val resultIntent_129 = Intent().apply {
                 putExtra("TEN_KHOAN_CHI", tenMoi_129)
                 putExtra("SO_TIEN", soTienMoi_129)
