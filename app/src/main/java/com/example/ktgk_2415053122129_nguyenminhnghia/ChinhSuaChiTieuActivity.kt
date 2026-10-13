@@ -27,7 +27,7 @@ class ChinhSuaChiTieuActivity : AppCompatActivity() {
         btnLuuChinhSua_129 = findViewById(R.id.btnLuuChinhSua_129)
         btnHuyBo_129 = findViewById(R.id.btnHuyBo_129)
 
-        // Nhận dữ liệu cũ để hiển thị sẵn
+        // Hiển thị sẵn dữ liệu hiện tại
         edtEditTen_129.setText(intent.getStringExtra("TEN_KHOAN_CHI"))
         edtEditSoTien_129.setText(intent.getDoubleExtra("SO_TIEN", 0.0).toString())
         edtEditGhiChu_129.setText(intent.getStringExtra("GHI_CHU"))
@@ -43,11 +43,19 @@ class ChinhSuaChiTieuActivity : AppCompatActivity() {
             }
 
             val soTienMoi_129 = soTienStr_129.toDoubleOrNull() ?: 0.0
+
+            // Kiểm tra giới hạn số tiền không được vượt quá 5.000.000 VNĐ (Bổ sung 2)
+            if (soTienMoi_129 > 5000000.0) {
+                Toast.makeText(this, "Lỗi: Số tiền chỉnh sửa vượt quá giới hạn 5.000.000 VNĐ!", Toast.LENGTH_LONG).show()
+                return@setOnClickListener
+            }
+
             if (soTienMoi_129 <= 0) {
                 Toast.makeText(this, "Số tiền phải lớn hơn 0!", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
+            // Đóng gói dữ liệu trả về qua Intent đúng cú pháp
             val resultIntent_129 = Intent().apply {
                 putExtra("TEN_KHOAN_CHI", tenMoi_129)
                 putExtra("SO_TIEN", soTienMoi_129)

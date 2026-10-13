@@ -43,14 +43,22 @@ class MainActivity : AppCompatActivity() {
             val soTienStr_129 = edtSoTien_129.text.toString().trim()
 
             if (ten_129.isEmpty() || soTienStr_129.isEmpty()) {
-                Toast.makeText(this, "Vui lòng nhập đầy đủ tên khoản chi và số tiền!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Vui lòng nhập đầy đủ tên và số tiền!", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
+            val soTien_129 = soTienStr_129.toDoubleOrNull() ?: 0.0
+
+            // Kiểm tra giới hạn số tiền tối đa 5.000.000 VNĐ
+            if (soTien_129 > 5000000.0) {
+                Toast.makeText(this, "Lỗi: Số tiền không được vượt quá 5.000.000 VNĐ!", Toast.LENGTH_LONG).show()
+                return@setOnClickListener
+            }
+
+            if (soTien_129 <= 0) {
+                Toast.makeText(this, "Số tiền phải lớn hơn 0!", Toast.LENGTH_SHORT).show()
             } else {
-                val soTien_129 = soTienStr_129.toDoubleOrNull() ?: 0.0
-                if (soTien_129 <= 0) {
-                    Toast.makeText(this, "Số tiền phải lớn hơn 0!", Toast.LENGTH_SHORT).show()
-                } else {
-                    Toast.makeText(this, "Thêm khoản chi thành công: $ten_129", Toast.LENGTH_SHORT).show()
-                }
+                Toast.makeText(this, "Thêm khoản chi thành công: $ten_129", Toast.LENGTH_SHORT).show()
             }
         }
 
