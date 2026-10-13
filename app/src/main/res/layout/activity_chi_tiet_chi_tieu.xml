@@ -12,7 +12,16 @@
         android:text="Thông tin chi tiết"
         android:textSize="16sp"
         android:lineSpacingExtra="6dp"
-        android:layout_marginBottom="24dp"/>
+        android:layout_marginBottom="16dp"/>
+
+    <!-- Yêu cầu bổ sung 3: Switch chuyển đổi trạng thái thanh toán -->
+    <Switch
+        android:id="@+id/swTrangThai_129"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Đã thanh toán"
+        android:textSize="16sp"
+        android:layout_marginBottom="16dp"/>
 
     <Button
         android:id="@+id/btnMoManHinhSua_129"
